@@ -11,7 +11,7 @@ import static spark.Spark.get;
 
 public class SimpleRestApplication {
     public static void main(String[] args) throws Exception {
-        get("/hello", respondWith(new HelloWorld().sayHello()));
+        get("/hello", respondWith(new HelloWorld().sayHelloWorld()));
         get("/healthcheck", respondWith("OK"));
     }
 
