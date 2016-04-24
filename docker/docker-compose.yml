@@ -4,6 +4,8 @@ services:
   workstation-10:
     image: registry.training.local/workstation-10:${IMAGE_VERSION}
     network_mode: bridge
+    environment:
+      - "SERVICE_NAME=nic-service"
     ports:
       - "4567"
       
