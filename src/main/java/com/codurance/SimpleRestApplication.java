@@ -11,7 +11,7 @@ import static spark.Spark.get;
 
 public class SimpleRestApplication {
     public static void main(String[] args) throws Exception {
-        get("/hello", respondWith("Hello I'm running on : \n" + getIp()));
+        get("/hello", respondWith(new HelloWorld().sayHello()));
         get("/healthcheck", respondWith("OK"));
     }
 
@@ -22,20 +22,5 @@ public class SimpleRestApplication {
             return responseBody;
         };
     }
-    
-       private static String getIp() throws SocketException {
-        Enumeration e = NetworkInterface.getNetworkInterfaces();
-        StringBuilder sb = new StringBuilder();
-        while(e.hasMoreElements())
-        {
-            NetworkInterface n = (NetworkInterface) e.nextElement();
-            Enumeration ee = n.getInetAddresses();
-            while (ee.hasMoreElements())
-            {
-                InetAddress i = (InetAddress) ee.nextElement();
-                sb.append(i.getHostAddress());
-            }
-        }
-        return sb.toString();
-    }
+     
 }
