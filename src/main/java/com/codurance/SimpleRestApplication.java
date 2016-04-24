@@ -10,7 +10,7 @@ import java.util.Enumeration;
 import static spark.Spark.get;
 
 public class SimpleRestApplication {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         get("/hello", respondWith("Hello I'm running on : \n" + getIp()));
         get("/healthcheck", respondWith("OK"));
     }
