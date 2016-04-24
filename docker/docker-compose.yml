@@ -5,5 +5,5 @@ services:
     image: registry.training.local/workstation-10:${IMAGE_VERSION}
     network_mode: bridge
     ports:
-      - "80:4567"
+      - "4567"
       
